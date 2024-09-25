@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
     <link rel="stylesheet" href="{% static 'css/sweetalert2.min.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/dataTables.bootstrap5.min.css' %}" />
+    {% comment %} <link rel="stylesheet" href="{% static 'css/dataTables.bootstrap5.min.css' %}" /> {% endcomment %}
     {% comment %} <link rel="stylesheet" href="{% static 'css/tabulator_site_dark.css' %}" /> {% endcomment %}
     <link rel="stylesheet" href="{% static 'css/css_search.css' %}" />
     <link rel="stylesheet" href="{% static 'css/bootstrap-extended.min.css' %}" />
@@ -15,8 +15,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/kemhan_logo_fix.ico' %}" />
     <link rel="stylesheet" href="{% static 'css/select2-bootstrap-5-theme.min.css' %}" />
 
-    {% comment %} <link rel="stylesheet" href="{% static 'css/customcss.css' %}" /> {% endcomment %}
-
+    <link href="https://unpkg.com/tabulator-tables/dist/css/tabulator.min.css" rel="stylesheet">
 
 {% comment %} 
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
@@ -101,6 +100,7 @@
     </div>
 
     {% block home %}{% endblock %}
+    {% block settings %}{% endblock %}
 
    
 
@@ -109,7 +109,7 @@
     <script type="text/javascript" src="{% static 'js/jquery-3.7.1.slim.min.js' %}"></script>
     {% comment %} <script type="text/javascript" src="{% static 'js/custom.js' %}"></script> {% endcomment %}
     <script type="text/javascript" src="{% static 'js/jquery.dataTables.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/dataTables.bootstrap5.min.js' %}"></script>
+    {% comment %} <script type="text/javascript" src="{% static 'js/dataTables.bootstrap5.min.js' %}"></script> {% endcomment %}
     {% comment %} <script type="text/javascript" src="{% static 'js/htmx.min.js' %}" defer></script> {% endcomment %}
     <script type="text/javascript" src="{% static 'js/chart.js' %}" defer></script>
     <script type="text/javascript" src="{% static 'js/chart.min.js' %}" defer></script>
@@ -119,8 +119,7 @@
     {% comment %} <script type="text/javascript" src="{% static 'js/flatpickr.js' %}" defer></script>
     <script type="text/javascript" src="{% static 'js/month_select.js' %}" defer></script> {% endcomment %}
 
-    {% comment %} <script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@3.1.0/dist/js/multi-select-tag.js"></script> {% endcomment %}
-
+    <script type="text/javascript" src="https://unpkg.com/tabulator-tables/dist/js/tabulator.min.js"></script>
 
 
     <script>
@@ -155,6 +154,15 @@
         })
       })()
     </script>
+
+    {% comment %} <script>
+      new DataTable('#table_settings');
+    </script> {% endcomment %}
+
+    {% comment %} <script>
+      new DataTable('#table_settings', {})
+
+    </script> {% endcomment %}
 
     {% comment %} <script>
       new DataTable('#tabel_klasifikasi', {})

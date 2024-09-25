@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block settings %}
+
+{% include 'header/index.html' %}
+
+{% comment %} <div class="container mt-5">
+    <h1>Book List</h1>
+    <table id="table_settings" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>CODE</th>
+                <th>COMPANY</th>
+                <th>LISTING BOARD</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% include 'parsial_tables/all_stocks.html' %}
+        </tbody>
+    </table>
+</div> {% endcomment %}
+
+<div id="table_settings"></div>
+
+{% comment %} <script>
+    $(document).ready(function() {
+        $('#table_settings').DataTable({
+            "ajax": {
+                "url": "{% url 'settings' %}",
+                "dataSrc": ""
+            },
+            "columns": [
+                { "data": "code" },
+                { "data": "company_name" }
+                { "data": "listing_board" },
+            ]
+        });
+    });
+</script> {% endcomment %}
+
+<script>
+    // Initialize Tabulator
+    var table = new Tabulator("#table_settings", {
+        ajaxURL: "/settings/", // URL to fetch data
+        layout: "fitColumns", // Fit columns to width of table
+        columns: [
+            { title: "CODE", field: "code", width: 150 },
+            { title: "COMPANY", field: "company_name", width: 200 },
+            { title: "LISTING BOARD", field: "listing_board", width: 150 },
+        ],
+    });
+</script>
+
+{% endblock %}

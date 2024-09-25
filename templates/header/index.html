@@ -3,30 +3,25 @@
 <div>
   <nav class="navbar bg-body-secondary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="">
+      <a class="navbar-brand" href="{% url 'home' %}">
         <img src="{% static 'img/kemhan_logo.png' %}" alt="KEMHAN Logo" width="45" height="45" />
         <span>SCANNER SAHAM</span>
       </a>
 
       <ul class="nav nav-underline fw-bold">
         <div style="margin-right: 3.5rem; " class="d-flex gap-4 fw-bold">
-          <span class="mt-2 text-warning">Selamat Datang ,</span>
-
-          <li class="nav-item">
-            <a class="nav-link {% if request.path == '/surat_masuk/sekretariat/' %} active {% endif %}" href="">Dashboard</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link {% if request.path == '/surat_masuk/sekretariat/belum_dibaca/' %} active {% endif %}" href="">Surat Masuk</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link {% if request.path == '/surat_masuk/kabaranahan/settings/' %} active {% endif %}" href="">Settings</a>
-          </li>
-
         
-          <li style="margin-right: -3rem" class="nav-item">
-            <a type="button" class="btn btn-danger fa fa-sign-out mt-1" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Logout" href=""></a>
+          <li class="nav-item">
+            <a class="nav-link {% if request.path == '/scanner/' %} active {% endif %}" href="{% url 'home' %}">Dashboard</a>
           </li>
+
+          <li class="nav-item">
+            <a class="nav-link {% if request.path == '/surat_masuk/sekretariat/belum_dibaca/' %} active {% endif %}" href="">Scanner</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if request.path == '/scanner/settings/' %} active {% endif %}" href="{% url 'settings' %}">Settings</a>
+          </li>
+         
         </div>
       </ul>
     </div>
