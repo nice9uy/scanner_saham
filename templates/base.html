@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
     <link rel="stylesheet" href="{% static 'css/dataTables.dataTables.css' %}" />
     <link rel="stylesheet" href="{% static 'css/sweetalert2.min.css' %}" />
-    <script type="text/javascript" src="{% static 'js/chart.min.js' %}"></script>
     <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/kemhan_logo_fix.ico' %}" />
 
 
@@ -97,10 +96,9 @@
     <script type="text/javascript" src="{% static 'js/font_awsome.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/jquery-3.7.1.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/dataTables.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/chart.js' %}" defer></script>
-    <script type="text/javascript" src="{% static 'js/chart.min.js' %}" defer></script>
     <script type="text/javascript" src="{% static 'js/popper.min.js' %}" defer></script>
     <script type="text/javascript" src="{% static 'js/sweetalert2.all.min.js' %}" defer></script>
+    <script type="text/javascript" src="{% static 'js/htmx.min.js' %}" defer></script>
 
     <script>
       // JavaScript to hide the preloader
@@ -109,166 +107,8 @@
       });
     </script>
 
-
     <script>
-      ;(() => {
-        'use strict'
-
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        const forms = document.querySelectorAll('.needs-validation')
-
-        // Loop over them and prevent submission
-        Array.from(forms).forEach((form) => {
-          form.addEventListener(
-            'submit',
-            (event) => {
-              if (!form.checkValidity()) {
-                event.preventDefault()
-                event.stopPropagation()
-              }
-
-              form.classList.add('was-validated')
-            },
-            false
-          )
-        })
-      })()
-    </script>
-
-    <script>
-      new DataTable('#table_settings', {})
-  </script>
-  
-
-    {% comment %} <script>
-      new DataTable('#table_settings', {})
-    </script>  {% endcomment %}
-
-    {% comment %} <script>
-      new DataTable('#table_settings', {})
-
-    </script> {% endcomment %}
-
-    {% comment %} <script>
-      new DataTable('#tabel_klasifikasi', {})
-      new DataTable('#tabel_jenis_surat', {})
-      new DataTable('#tabel_derajat_surat', {})
-      new DataTable('#tabel_surat_masuk_tuset', {})
-
-      new DataTable('#tabe_cari_disposisi',{
-        "paging": false,
-        "bFilter": false,
-        "bInfo": false,
-      })
-      new DataTable('#tabe_cari_integritas_disposisi',{
-        "paging": false,
-        "bFilter": false,
-        "bInfo": false,
-      })
-
-      new DataTable('#tabel_setting_organisasi',{
-        "bFilter": false,
-      })
-
-      new DataTable('#tabel_setting_kabag_set',{
-        "bFilter": false,
-      })
-
-      new DataTable('#tabel_setting_kabag_alpalhan',{
-        "bFilter": false,
-      })
-
-      new DataTable('#tabel_setting_kapus_konstruksi',{
-        "bFilter": false,
-      })
-
-      new DataTable('#tabel_setting_kapus_kodefikasi',{
-        "bFilter": false,
-      })
-
-      new DataTable('#tabel_setting_kapus_bmn',{
-        "bFilter": false,
-      })
-
-
-
-      new DataTable('#tabel_arsip_kabaranahan', {})
-      new DataTable('#tabe_kabaranahan_arsip',{})
-      new DataTable('#tabe_kabaranahan_signature',{})
-
-      new DataTable('#tabel_arsip_kapus', {})
-
-
-
-      new DataTable('#tabel_anggota_kabaranahan')
-
-    </script>
- {% endcomment %}
-
-    <script>
-      $(document).ready(function() {
-        {% if messages %}
-          {% for message in messages %}
-            Swal.fire({
-              title: '{{ message.tags|title }}',
-              text: '{{ message }}',
-              icon: '{{ message.tags }}',
-              confirmButtonText: 'Ok'
-            });
-          {% endfor %}
-        {% endif %}
-      });
-    </script>
-
-    <script>
-      $(document).ready(function() {
-        {% if messages %}
-          {% for message in messages %}
-            Swal.fire({
-              title: '{{ message.tags|title }}',
-              text: '{{ message }}',
-              icon: '{{ message.tags }}',
-              confirmButtonText: 'Ok'
-            });
-          {% endfor %}
-        {% endif %}
-      });
-    </script>
-
-    <script>
-
-      $(document).ready(function() {
-        const radioAnggota = document.getElementById('flexRadioDefault3');
-
-        // Dapatkan elemen modal Anggota
-        const modalAnggota = new bootstrap.Modal(document.getElementById('modalAnggota'));
-
-        // Tambahkan event listener ke radio button
-        radioAnggota.addEventListener('change', function() {
-          if (radioAnggota.checked) {
-            // Tampilkan modal jika radio button ANGGOTA dipilih
-            modalAnggota.show();
-          }
-        });
-
-      });
-
-
-      // Dapatkan elemen radio button dengan id flexRadioDefault3 (ANGGOTA)
-
-    </script>
-
-    {% comment %} <script>
-      $( '#multiple-select-field' ).select2( {
-        theme: "bootstrap-5",
-        width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
-        placeholder: $( this ).data( 'placeholder' ),
-        closeOnSelect: false,
-    } );
-    </script> {% endcomment %}
-
-    <script>
-      new MultiSelectTag('countries')  // id
+      new DataTable('#table_settings');
     </script>
 
 

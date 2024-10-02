@@ -5,7 +5,7 @@ from .models import DbAllStocks
 from django.core.files.storage import FileSystemStorage
 import pandas as pd
 from django.shortcuts import render, redirect
-
+from django.http import JsonResponse
 
 
 def home(request):
@@ -13,11 +13,15 @@ def home(request):
     return render(request, "home/index.html") 
 
 def settings(request):
-    stocks_settings = DbAllStocks.objects.all().values('id', 'code', 'company_name','listing_board')
+    return render(request, "home/settings.html")
 
-    print(stocks_settings)
+def setting_data(request):
+    try:
+        stocks_settings = list(DbAllStocks.objects.values())
+    except:
+        pass
+    return render(request, "parsial/all_stocks.html", {'stocks_settings': stocks_settings})
 
-    return render(request, "home/settings.html", {'stocks_settings': stocks_settings})
 
 def upload_data_stocks(request):
     if request.method == 'POST' and request.FILES['excel_file']:
