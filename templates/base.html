@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
     <link rel="stylesheet" href="{% static 'css/dataTables.dataTables.css' %}" />
     <link rel="stylesheet" href="{% static 'css/sweetalert2.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/tabulator_site_dark.min.css' %}" />
+
     <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/kemhan_logo_fix.ico' %}" />
 
 
@@ -96,9 +98,12 @@
     <script type="text/javascript" src="{% static 'js/font_awsome.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/jquery-3.7.1.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/dataTables.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/tabulator.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/popper.min.js' %}" defer></script>
     <script type="text/javascript" src="{% static 'js/sweetalert2.all.min.js' %}" defer></script>
     <script type="text/javascript" src="{% static 'js/htmx.min.js' %}" defer></script>
+    <script type="text/javascript" src="{% static 'js/custom_js/all_data.js' %}" defer></script>
+
 
     <script>
       // JavaScript to hide the preloader
@@ -107,9 +112,7 @@
       });
     </script>
 
-    <script>
-      new DataTable('#table_settings');
-    </script>
+    
 
 
 

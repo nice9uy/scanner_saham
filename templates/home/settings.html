@@ -2,17 +2,22 @@
 {% load static %}
 {% block settings %}
 
+<link rel="stylesheet" href="{% static 'css/tabulator_site_dark.min.css' %}" />
+<script type="text/javascript" src="{% static 'js/tabulator.min.js' %}"></script>
+
+
     {% include 'header/index.html' %}
 
 
-    <div class="container-fluid mt-2">
-        <h4 class="text-center">LIST SAHAM</h4>
-        <div style="margin-top: -2rem;">
-            <button style="margin-bottom: 1rem;" type="button" class="btn btn-primary btn-sm"  hx-trigger="click">Load Stocks</button>
-            <div hx-get="{% url 'setting_data' %}" hx-trigger="load,every 5s">
-
+        <div class="container-fluid text-center">
+            
+            <p>DAFTAR SAHAM</p>
+            <div id="table_settings"></div>
 
         </div>
 
+
+
+    
     
 {% endblock %}

@@ -20,7 +20,7 @@ def setting_data(request):
         stocks_settings = list(DbAllStocks.objects.values())
     except:
         pass
-    return render(request, "parsial/all_stocks.html", {'stocks_settings': stocks_settings})
+    return JsonResponse(stocks_settings, safe=False) 
 
 
 def upload_data_stocks(request):
