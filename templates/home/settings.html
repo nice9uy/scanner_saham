@@ -2,22 +2,22 @@
 {% load static %}
 {% block settings %}
 
-<link rel="stylesheet" href="{% static 'css/tabulator_site_dark.min.css' %}" />
-<script type="text/javascript" src="{% static 'js/tabulator.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/tabulator_site_dark.min.css' %}" />
+    <script type="text/javascript" src="{% static 'js/tabulator.min.js' %}"></script>
 
 
     {% include 'header/index.html' %}
 
 
-        <div class="container-fluid text-center">
-            
-            <p>DAFTAR SAHAM</p>
-            <div id="table_settings"></div>
+    <div class="container-fluid text-center">
 
-        </div>
+        <p  style="font-size: 20px; font-family: Verdana, Geneva, Tahoma, sans-serif; " class="mt-3">DAFTAR SAHAM</p>
+        <div id="table_settings"></div>
+
+    </div>
 
 
 
-    
-    
+
+
 {% endblock %}

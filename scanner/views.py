@@ -17,10 +17,12 @@ def settings(request):
 
 def setting_data(request):
     try:
-        stocks_settings = list(DbAllStocks.objects.values())
+        stocks_settings = list(DbAllStocks.objects.values('code','company_name' , 'listing_board' ))
     except:
         pass
     return JsonResponse(stocks_settings, safe=False) 
+
+
 
 
 def upload_data_stocks(request):
