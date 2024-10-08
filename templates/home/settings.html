@@ -12,9 +12,10 @@
     <h5 class="text-center mt-3">LIST SAHAM YANG TERSEDIA</h5>
 
     <div style="margin-top: -2rem;" class="d-flex justify-content-between mb-2 ">
-      <div> 
+      <div>
         <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-placement="bottom" title="UPDATE" data-bs-target="#tambah_saham">TAMBAH SAHAM</button>
-        <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-placement="bottom" title="UPDATE" data-bs-target="#tambah_saham">HAPUS SAHAM</button>
+        <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-placement="bottom" title="UPDATE" data-bs-target="#hapus_saham">HAPUS SAHAM</button>
+
       </div>
       <div>
         <input class="form-control form-control-sm" type="text" id="search" placeholder="Cari Emiten" aria-label="default input example">
@@ -24,5 +25,6 @@
   </div>
 
   {% include 'modal/tambah_saham.html' %}
+  {% include 'modal/hapus_saham.html' %}
 
 {% endblock %}
